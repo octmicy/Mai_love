@@ -42,13 +42,14 @@ class ScheduleGenerator:
         """初始化日程生成器。
 
         Args:
-            data_dir: 数据目录路径。
+            data_dir: 数据目录路径（用于缓存文件）。
             config: 插件强类型配置模型（预留给未来功能）。
             llm_service: LLM 服务。
             holiday_service: 节假日服务。
         """
         self._cache_file: Path = Path(data_dir) / "schedule_cache.json"
-        self._template_file: Path = Path(data_dir) / "mai_template.json"
+        # 模板文件在插件根目录（data_dir 的上一级），不是 data/ 子目录
+        self._template_file: Path = Path(data_dir).parent / "mai_template.json"
         self._config: MaiLoverPluginSettings = config
         self._llm: LLMService = llm_service
         self._holiday: HolidayService = holiday_service
