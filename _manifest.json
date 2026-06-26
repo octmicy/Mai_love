@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "id": "maibot-community.mai-lover",
+  "id": "maibot-community.mai-love",
   "name": "麦麦恋人",
   "version": "2.0.0",
   "description": "私聊专用虚拟恋人插件，会主动找你聊天。基于麦麦的独立日程生活，通过 planner 自主决策什么时候说话、说什么，配合好感度系统调节语气温度",
