@@ -709,13 +709,13 @@ class MaiLoverPlugin(MaiBotPlugin):
     def _get_data_dir(self) -> str:
         """获取插件数据目录路径。
 
-        数据写入插件目录下的 data/ 子目录，避免插件更新（git pull）时
+        数据写入持久化目录下，避免插件更新（git pull）时
         覆盖用户运行时数据（affection_memory.json、schedule_cache.json）。
 
         Returns:
-            数据目录绝对路径。
+            返回MaiBot框架统一插件持久化目录 ctx.path.data
         """
-        return os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+        return self.data_dir
 
     async def _resolve_stream_id(self, target_qq: str) -> str:
         """获取目标 QQ 的私聊 stream_id（纯 SDK 路径）。
