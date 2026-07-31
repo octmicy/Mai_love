@@ -715,7 +715,7 @@ class MaiLoverPlugin(MaiBotPlugin):
         Returns:
             返回MaiBot框架统一插件持久化目录 ctx.path.data
         """
-        return self.data_dir
+        return self.ctx.paths.data_dir
 
     async def _resolve_stream_id(self, target_qq: str) -> str:
         """获取目标 QQ 的私聊 stream_id（纯 SDK 路径）。
